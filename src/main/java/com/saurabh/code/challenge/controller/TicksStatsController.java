@@ -64,9 +64,9 @@ public class TicksStatsController {
 	 *                                   passed as NULL or blank
 	 */
 	@GetMapping("/statistics/{instrument_identifier}")
-	public ResponseEntity<Statistics> statsForInstrument(@PathVariable("instrument_identifier") String instrument)
+	public Statistics statsForInstrument(@PathVariable("instrument_identifier") String instrument)
 			throws BadTickParameterException {
 
-		return ResponseEntity.ok(ticksStatsService.computeStatisticsForInstrument(instrument));
+		return ticksStatsService.computeStatisticsForInstrument(instrument);
 	}
 }
